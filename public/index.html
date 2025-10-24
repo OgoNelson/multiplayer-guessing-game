@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multiplayer Guessing Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>🎯 Multiplayer Guessing Game</h1>
+      <p class="subtitle">Chat-style guessing game for friends</p>
+    </header>
+
+    <!-- Connection Section -->
+    <section class="connection">
+      <input id="username" type="text" placeholder="Enter your name" />
+      <input id="sessionId" type="text" placeholder="Session ID (if joining)" />
+      <button id="createBtn">Create Game</button>
+      <button id="joinBtn">Join Game</button>
+    </section>
+
+    <!-- Game Section -->
+    <section id="game" class="hidden">
+      <div class="top-bar">
+        <div>Session: <span id="sessionDisplay">—</span></div>
+        <div>Role: <span id="roleDisplay">—</span></div>
+      </div>
+
+      <div class="main">
+        <div class="chat">
+          <!-- Chat Messages -->
+          <div id="messages" class="messages"></div>
+
+          <!-- Chat Input (optional if API supports chat) -->
+          <div class="chat-input">
+            <input id="messageInput" type="text" placeholder="Type message..." />
+            <button id="sendBtn">Send</button>
+          </div>
+
+          <!-- Guess Input -->
+          <div class="guess-input">
+            <input id="guessInput" type="text" placeholder="Enter your guess..." />
+            <button id="guessBtn">Guess</button>
+          </div>
+
+          <!-- Game Master Controls -->
+          <div id="gmControls" class="gm-controls hidden">
+            <input id="questionInput" type="text" placeholder="Enter your question" />
+            <input id="answerInput" type="text" placeholder="Enter correct answer" />
+            <button id="revealBtn">Reveal</button>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <h3>Players</h3>
+          <ul id="players"></ul>
+
+          <h3>Top Guesses</h3>
+          <ul id="guesses"></ul>
+
+          <h3>Leaderboard</h3>
+          <ul id="leaderboard"></ul>
+        </aside>
+      </div>
+
+      <!-- Footer Buttons -->
+      <footer>
+        <button id="startBtn" class="hidden">Start Game</button>
+        <button id="leaveBtn" class="hidden">Leave</button>
+      </footer>
+    </section>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
