@@ -1,0 +1,144 @@
+.player-list {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.player-list.empty {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+.player-list-title {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 8px;
+}
+
+.player-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.player-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 6px;
+  background: #f8f9fa;
+  transition: background-color 0.2s ease;
+}
+
+.player-item:hover {
+  background: #e9ecef;
+}
+
+.player-item.current-player {
+  background: #e3f2fd;
+  border: 1px solid #2196f3;
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.player-name {
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.you-badge {
+  font-size: 12px;
+  color: #2196f3;
+  font-weight: 600;
+  background: #e3f2fd;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.game-master-badge {
+  font-size: 12px;
+  color: #f57c00;
+  font-weight: 600;
+  background: #fff3e0;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.player-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.player-score {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.player-attempts {
+  font-size: 12px;
+  color: #666;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #f0f0f0;
+}
+
+.player-attempts.exhausted {
+  color: #d32f2f;
+  background: #ffebee;
+  font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .player-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .player-stats {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 12px;
+  }
+  
+  .player-name {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+/* Animation for new players */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.player-item {
+  animation: slideIn 0.3s ease-out;
+}
