@@ -12,7 +12,9 @@ const io = socketIo(server, {
       "http://localhost:5174",
       "http://localhost:5173",
       "http://localhost:3000",
-    ],
+      process.env.RAILWAY_PUBLIC_DOMAIN ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}` : "",
+      process.env.RAILWAY_STATIC_URL ? process.env.RAILWAY_STATIC_URL : "",
+    ].filter(Boolean),
     methods: ["GET", "POST"],
   },
 });
