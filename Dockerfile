@@ -38,4 +38,4 @@ COPY --from=builder /app/client/dist ./public
 EXPOSE 3000
 
 # Start the server
-CMD ["node", "server/app.js"]
+CMD ["node", "app.js"]
