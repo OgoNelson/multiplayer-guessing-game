@@ -2,7 +2,17 @@ import { useEffect, useRef, useState } from 'react';
 import { io } from 'socket.io-client';
 import { SOCKET_EVENTS } from '../utils/socketEvents';
 
-const SERVER_URL = 'http://localhost:3000';
+// Dynamic server URL that works in both development and production
+const getServerUrl = () => {
+  // In production, use the same origin as the current page
+  if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    return window.location.origin;
+  }
+  // In development, use localhost:3000
+  return 'http://localhost:3000';
+};
+
+const SERVER_URL = getServerUrl();
 
 export const useSocket = () => {
   const [isConnected, setIsConnected] = useState(false);
