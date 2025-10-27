@@ -12,7 +12,9 @@ const io = socketIo(server, {
       "http://localhost:5174",
       "http://localhost:5173",
       "http://localhost:3000",
-      process.env.RAILWAY_PUBLIC_DOMAIN ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}` : "",
+      process.env.RAILWAY_PUBLIC_DOMAIN
+        ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}`
+        : "",
       process.env.RAILWAY_STATIC_URL ? process.env.RAILWAY_STATIC_URL : "",
     ].filter(Boolean),
     methods: ["GET", "POST"],
@@ -31,11 +33,11 @@ app.get("/health", (req, res) => {
 require("./socketHandlers")(io);
 
 // Serve static files in production
-app.use(express.static(path.join(__dirname, "../client/dist")));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Handle client routing, return all requests to the React app
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // Error handling middleware
