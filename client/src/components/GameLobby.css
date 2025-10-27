@@ -1,0 +1,334 @@
+.game-lobby {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f5f5f5;
+  position: relative;
+}
+
+.lobby-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.session-info h2 {
+  margin: 0;
+  color: #333;
+  font-size: 24px;
+}
+
+.session-code {
+  font-size: 16px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.code {
+  font-family: monospace;
+  font-weight: bold;
+  color: #2196f3;
+  background: #e3f2fd;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.leave-button {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.leave-button:hover:not(:disabled) {
+  background: #d32f2f;
+}
+
+.leave-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.leave-button.bottom-right {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1001;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.error-message {
+  background: #ffebee;
+  color: #c62828;
+  padding: 12px 24px;
+  border-bottom: 1px solid #ffcdd2;
+  font-weight: 500;
+}
+
+.lobby-content {
+  display: flex;
+  flex: 1;
+  padding: 24px;
+  gap: 24px;
+  overflow: hidden;
+}
+
+.left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.right-panel {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.game-master-controls,
+.player-waiting {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-master-controls h3,
+.player-waiting h3 {
+  margin: 0 0 16px 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.question-needed p {
+  margin: 0 0 12px 0;
+  color: #666;
+}
+
+.create-question-button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.create-question-button:hover:not(:disabled) {
+  background: #45a049;
+}
+
+.create-question-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.question-preview {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.question-preview h4 {
+  margin: 0 0 8px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.question-text {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 4px solid #2196f3;
+  margin: 0 0 16px 0;
+  font-style: italic;
+  color: #333;
+}
+
+.start-game-button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.start-game-button:hover:not(:disabled) {
+  background: #45a049;
+}
+
+.start-game-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.waiting-message {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  margin: 12px 0 0 0;
+}
+
+.question-form-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 0 20px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #333;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.close-button:hover {
+  background: #f0f0f0;
+}
+
+.game-info {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-info h3 {
+  margin: 0 0 16px 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.rules {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rules p {
+  margin: 0;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.rules p:last-child {
+  border-bottom: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .lobby-content {
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+  }
+  
+  .right-panel {
+    width: 100%;
+  }
+  
+  .lobby-header {
+    padding: 12px 16px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .leave-button.bottom-right {
+    bottom: 10px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .session-info h2 {
+    font-size: 20px;
+  }
+  
+  .question-form-modal {
+    padding: 16px;
+  }
+  
+  .modal-content {
+    width: 100%;
+  }
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.game-master-controls,
+.player-waiting,
+.game-info {
+  animation: slideIn 0.3s ease-out;
+}
