@@ -14,7 +14,7 @@ RUN npm install
 COPY client/ .
 
 # Build the frontend (output -> client/dist)
-RUN npm run build:start
+RUN npm run build
 
 
 # ---------- Stage 2: Setup backend ----------
