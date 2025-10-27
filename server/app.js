@@ -31,11 +31,11 @@ app.get("/health", (req, res) => {
 require("./socketHandlers")(io);
 
 // Serve static files in production
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
 // Handle client routing, return all requests to the React app
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public", "index.html"));
+  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
 });
 
 // Error handling middleware
