@@ -29,14 +29,12 @@ app.get("/health", (req, res) => {
 require("./socketHandlers")(io);
 
 // Serve static files in production
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../client/dist")));
-  
-  // Handle client routing, return all requests to the React app
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
-  });
-}
+app.use(express.static(path.join(__dirname, "../public")));
+
+// Handle client routing, return all requests to the React app
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public", "index.html"));
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {

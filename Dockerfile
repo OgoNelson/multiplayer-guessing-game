@@ -14,7 +14,7 @@ RUN npm install
 COPY client/ .
 
 # Build the frontend (output -> client/dist)
-RUN npm run build:start
+RUN npm run build
 
 
 # ---------- Stage 2: Setup backend ----------
@@ -24,10 +24,8 @@ WORKDIR /app
 
 # Copy backend dependency files
 COPY package*.json ./
-COPY server/package*.json ./server/
 
 # Install backend dependencies
-WORKDIR /app/server
 RUN npm install --omit=dev
 
 # Copy backend code
@@ -40,4 +38,4 @@ COPY --from=builder /app/client/dist ./public
 EXPOSE 3000
 
 # Start the server
-CMD ["node", "app.js"]
+CMD ["node", "server/app.js"]
