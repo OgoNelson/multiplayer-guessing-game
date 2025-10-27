@@ -11,7 +11,7 @@
     "client:dev": "cd client && npm run dev",
     "dev:all": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
     "build": "cd client && npm run build",
-    "build:start": "npm run build && npm start",
+    "build:start": "npm i vite@latest && npm run build && npm start",
     "preview": "cd client && npm run preview"
   },
   "keywords": [

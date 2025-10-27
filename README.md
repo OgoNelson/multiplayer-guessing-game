@@ -35,8 +35,8 @@ A real-time multiplayer guessing game built with React, Node.js, and Socket.IO. 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/multiplayer-game.git
-   cd multiplayer-game
+   git clone https://github.com/OgoNelson/multiplayer-guessing-game.git
+   cd multiplayer-guessing-game
    ```
 
 2. Install dependencies for both client and server:
@@ -82,7 +82,7 @@ npm run build_start
 ## Project Structure
 
 ```
-multiplayer-game/
+multiplayer-guessing-game/
 ├── client/                 # React frontend application
 │   ├── dist/              # Built client files (generated)
 │   ├── public/            # Static assets
