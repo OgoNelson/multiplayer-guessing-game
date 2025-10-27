@@ -4,13 +4,13 @@
   "description": "A real-time multiplayer guessing game",
   "main": "server/app.js",
   "scripts": {
-    "start": "node server/app.js",
     "test": "node test-api.js",
     "dev": "nodemon server/app.js",
     "server:dev": "nodemon server/app.js",
     "client:dev": "cd client && npm run dev",
     "dev:all": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
     "build": "cd client && npm run build",
+    "start": "node server/app.js",
     "build:start": "npm run build && npm start",
     "preview": "cd client && npm run preview"
   },

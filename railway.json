@@ -3,7 +3,7 @@
     "builder": "DOCKERFILE"
   },
   "deploy": {
-    "startCommand": "node server/app.js",
+    "startCommand": "node app.js",
     "healthcheckPath": "/health"
   }
 }
