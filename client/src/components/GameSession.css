@@ -110,10 +110,15 @@
   flex-direction: column;
   gap: 20px;
   min-width: 0;
+  overflow: hidden;
+  min-height: 0;
 }
 
 .right-panel {
   width: 350px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .question-section {

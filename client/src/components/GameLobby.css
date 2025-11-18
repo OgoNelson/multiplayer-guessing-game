@@ -87,6 +87,8 @@
   flex-direction: column;
   gap: 16px;
   min-width: 0;
+  overflow: hidden;
+  min-height: 0;
 }
 
 .right-panel {
@@ -94,6 +96,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-height: 0;
 }
 
 .game-master-controls,
