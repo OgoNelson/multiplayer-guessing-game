@@ -4,6 +4,10 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 16px;
   margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
 }
 
 .player-list.empty {
@@ -25,6 +29,9 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 8px;
 }
 
 .player-item {
@@ -106,8 +113,31 @@
   font-weight: 600;
 }
 
+/* Custom scrollbar for player list */
+.player-list-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.player-list-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.player-list-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.player-list-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
+  .player-list {
+    max-height: 300px;
+  }
+  
   .player-item {
     flex-direction: column;
     align-items: flex-start;
