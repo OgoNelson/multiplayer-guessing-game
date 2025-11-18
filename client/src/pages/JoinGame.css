@@ -4,36 +4,49 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 1rem; /* Smaller padding for mobile */
+  /* Ensure proper layout on mobile */
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .join-container {
   background: white;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  max-width: 600px;
+  border-radius: 12px; /* Smaller radius for mobile */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Smaller shadow for mobile */
   width: 100%;
-  padding: 40px;
+  max-width: 100%;
+  padding: 1.5rem; /* Smaller padding for mobile */
   text-align: center;
+  /* Ensure container doesn't overflow on small screens */
+  margin: 0.5rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
 }
 
 .join-header {
-  margin-bottom: 32px;
+  margin-bottom: 1.5rem; /* Smaller margin for mobile */
   position: relative;
 }
 
 .back-button {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: static; /* Better mobile positioning */
   background: none;
   border: none;
   color: #667eea;
-  font-size: 16px;
+  font-size: 0.875rem; /* Smaller font for mobile */
   font-weight: 500;
   cursor: pointer;
-  padding: 8px 0;
+  padding: 0.5rem 0;
   transition: color 0.2s ease;
+  margin-bottom: 1rem;
+  /* Better touch target */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: flex-start;
 }
 
 .back-button:hover {
@@ -41,15 +54,18 @@
 }
 
 .join-title {
-  font-size: 32px;
+  font-size: 1.75rem; /* Smaller font for mobile */
   font-weight: 700;
   color: #333;
-  margin: 0 0 12px 0;
+  margin: 0 0 0.75rem 0;
   line-height: 1.2;
+  /* Prevent text overflow */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .join-subtitle {
-  font-size: 16px;
+  font-size: 1rem; /* Smaller font for mobile */
   color: #666;
   margin: 0;
   line-height: 1.4;
@@ -58,44 +74,51 @@
 .error-message {
   background: #ffebee;
   color: #c62828;
-  padding: 16px;
-  border-radius: 8px;
-  margin-bottom: 24px;
+  padding: 0.75rem; /* Smaller padding for mobile */
+  border-radius: 6px; /* Smaller radius for mobile */
+  margin-bottom: 1rem; /* Smaller margin for mobile */
   font-weight: 500;
-  border-left: 4px solid #f44336;
+  border-left: 3px solid #f44336; /* Smaller border for mobile */
+  font-size: 0.875rem; /* Smaller font for mobile */
 }
 
 .join-main {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 1.5rem; /* Smaller gap for mobile */
 }
 
 .join-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1rem; /* Smaller gap for mobile */
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem; /* Smaller gap for mobile */
   text-align: left;
 }
 
 .form-label {
   font-weight: 600;
   color: #333;
-  font-size: 16px;
+  font-size: 0.875rem; /* Smaller font for mobile */
 }
 
 .form-input {
-  padding: 16px;
+  padding: 0.75rem; /* Smaller padding for mobile */
   border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 6px; /* Smaller radius for mobile */
+  font-size: 1rem; /* 16px to prevent zoom on iOS */
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  /* Better mobile experience */
+  width: 100%;
+  max-width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .form-input:focus {
@@ -112,14 +135,15 @@
 
 .session-code-input {
   font-family: 'Courier New', monospace;
-  font-size: 20px;
+  font-size: 1.25rem; /* Smaller font for mobile */
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 1px; /* Smaller spacing for mobile */
   text-transform: uppercase;
+  padding: 1rem; /* Larger padding for better visibility */
 }
 
 .form-hint {
-  font-size: 12px;
+  font-size: 0.75rem; /* Smaller font for mobile */
   color: #666;
   text-align: right;
 }
@@ -128,19 +152,28 @@
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
   border: none;
-  padding: 16px 32px;
-  border-radius: 8px;
-  font-size: 16px;
+  padding: 0.875rem 1.5rem; /* Smaller padding for mobile */
+  border-radius: 6px; /* Smaller radius for mobile */
+  font-size: 1rem; /* 16px for better touch targets */
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  margin-top: 8px;
+  margin-top: 0.5rem; /* Smaller margin for mobile */
+  /* Better touch targets */
+  min-height: 44px;
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-user-select: none;
+  /* Prevent text overflow */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .join-button:hover:not(:disabled) {
   background: linear-gradient(135deg, #5a67d8, #6b46c1);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  transform: translateY(-1px); /* Smaller transform for mobile */
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); /* Smaller shadow for mobile */
 }
 
 .join-button:disabled {
@@ -152,98 +185,383 @@
 
 .join-info {
   text-align: left;
+  margin-top: 0.5rem;
 }
 
 .join-info h2 {
   text-align: center;
-  margin: 0 0 24px 0;
+  margin: 0 0 1rem 0; /* Smaller margin for mobile */
   color: #333;
-  font-size: 20px;
+  font-size: 1.125rem; /* Smaller font for mobile */
 }
 
 .steps {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0.75rem; /* Smaller gap for mobile */
 }
 
 .step {
   display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  padding: 16px;
+  flex-direction: column; /* Stack on mobile */
+  gap: 0.75rem; /* Smaller gap for mobile */
+  align-items: center; /* Center on mobile */
+  padding: 1rem; /* Smaller padding for mobile */
   background: #f8f9fa;
-  border-radius: 8px;
+  border-radius: 6px; /* Smaller radius for mobile */
   transition: transform 0.2s ease;
+  text-align: center;
 }
 
 .step:hover {
-  transform: translateX(4px);
+  transform: translateY(-2px); /* Vertical transform on mobile */
 }
 
 .step-number {
   background: #667eea;
   color: white;
-  width: 32px;
-  height: 32px;
+  width: 2rem; /* Smaller size for mobile */
+  height: 2rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
   flex-shrink: 0;
+  font-size: 0.875rem; /* Smaller font for mobile */
 }
 
 .step-content {
   flex: 1;
+  width: 100%;
 }
 
 .step-content h3 {
-  margin: 0 0 8px 0;
+  margin: 0 0 0.5rem 0; /* Smaller margin for mobile */
   color: #333;
-  font-size: 16px;
+  font-size: 1rem; /* Smaller font for mobile */
   font-weight: 600;
 }
 
 .step-content p {
   margin: 0;
   color: #666;
-  font-size: 14px;
+  font-size: 0.875rem; /* Smaller font for mobile */
   line-height: 1.4;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
+/* Responsive design - Mobile First */
+/* Small phones (landscape) */
+@media (min-width: 480px) {
   .join-container {
-    padding: 24px;
-    margin: 10px;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 14px;
   }
   
-  .join-title {
-    font-size: 28px;
-  }
-  
-  .join-subtitle {
-    font-size: 14px;
+  .join-header {
+    margin-bottom: 2rem;
   }
   
   .back-button {
-    position: static;
-    margin-bottom: 16px;
-    align-self: flex-start;
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .join-title {
+    font-size: 2rem;
+  }
+  
+  .join-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .error-message {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .join-main {
+    gap: 2rem;
+  }
+  
+  .join-form {
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    gap: 0.75rem;
+  }
+  
+  .form-label {
+    font-size: 1rem;
+  }
+  
+  .form-input {
+    padding: 1rem;
+    border-radius: 8px;
   }
   
   .session-code-input {
-    font-size: 18px;
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+    padding: 1.25rem;
+  }
+  
+  .form-hint {
+    font-size: 0.875rem;
+  }
+  
+  .join-button {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    margin-top: 0.75rem;
+  }
+  
+  .join-info h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .steps {
+    gap: 1rem;
   }
   
   .step {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row; /* Horizontal layout on larger screens */
+    align-items: flex-start;
+    text-align: left;
+    padding: 1.25rem;
+    border-radius: 8px;
+  }
+  
+  .step:hover {
+    transform: translateX(4px); /* Horizontal transform on larger screens */
   }
   
   .step-number {
-    margin: 0 auto;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+  
+  .step-content h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .step-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Tablets and large phones */
+@media (min-width: 768px) {
+  .join-container {
+    padding: 2.5rem;
+    margin: 1.5rem;
+    border-radius: 16px;
+    max-width: 500px;
+  }
+  
+  .join-header {
+    margin-bottom: 2.5rem;
+  }
+  
+  .back-button {
+    position: absolute; /* Restore absolute positioning */
+    left: 0;
+    top: 0;
+    margin-bottom: 0;
+  }
+  
+  .join-title {
+    font-size: 2.25rem;
+  }
+  
+  .join-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .error-message {
+    padding: 1.25rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+  }
+  
+  .join-main {
+    gap: 2.5rem;
+  }
+  
+  .join-form {
+    gap: 2rem;
+  }
+  
+  .form-group {
+    gap: 1rem;
+  }
+  
+  .form-label {
+    font-size: 1.125rem;
+  }
+  
+  .form-input {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+  
+  .session-code-input {
+    font-size: 1.75rem;
+    letter-spacing: 2px;
+    padding: 1.5rem;
+  }
+  
+  .form-hint {
+    font-size: 1rem;
+  }
+  
+  .join-button {
+    padding: 1.25rem 2.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+  }
+  
+  .join-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .steps {
+    gap: 1.5rem;
+  }
+  
+  .step {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+  
+  .step-number {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.125rem;
+  }
+  
+  .step-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .step-content p {
+    font-size: 1.125rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .join-container {
+    padding: 3rem;
+    margin: 2rem;
+    border-radius: 20px;
+    max-width: 600px;
+  }
+  
+  .join-header {
+    margin-bottom: 3rem;
+  }
+  
+  .back-button {
+    font-size: 1.125rem;
+  }
+  
+  .join-title {
+    font-size: 2.5rem;
+  }
+  
+  .join-subtitle {
+    font-size: 1.375rem;
+  }
+  
+  .error-message {
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
+    font-size: 1.25rem;
+  }
+  
+  .join-main {
+    gap: 3rem;
+  }
+  
+  .join-form {
+    gap: 2.5rem;
+  }
+  
+  .form-group {
+    gap: 1.25rem;
+  }
+  
+  .form-label {
+    font-size: 1.25rem;
+  }
+  
+  .form-input {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .session-code-input {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    padding: 1.75rem;
+  }
+  
+  .form-hint {
+    font-size: 1.125rem;
+  }
+  
+  .join-button {
+    padding: 1.5rem 3rem;
+    border-radius: 12px;
+    margin-top: 1.25rem;
+  }
+  
+  .join-info h2 {
+    font-size: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .steps {
+    gap: 2rem;
+  }
+  
+  .step {
+    padding: 2rem;
+    border-radius: 12px;
+  }
+  
+  .step-number {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.25rem;
+  }
+  
+  .step-content h3 {
+    font-size: 1.375rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .step-content p {
+    font-size: 1.25rem;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1280px) {
+  .join-container {
+    max-width: 700px;
   }
 }
 
