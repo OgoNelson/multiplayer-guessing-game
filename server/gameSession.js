@@ -18,6 +18,11 @@ class GameSession {
     // Check if player already exists
     if (this.players.find((p) => p.id === playerId)) return false;
 
+    // Check if username is already taken in this session
+    if (this.players.find((p) => p.username.toLowerCase() === username.toLowerCase())) {
+      return { error: 'Username already taken in this session' };
+    }
+
     this.players.push({
       id: playerId,
       username: username,

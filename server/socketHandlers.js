@@ -76,7 +76,12 @@ module.exports = function(io) {
             const sessionId = uuidv4().substring(0, 8).toUpperCase();
             const session = new GameSession(sessionId, socket.id);
             
-            session.addPlayer(socket.id, cleanUsername);
+            const addResult = session.addPlayer(socket.id, cleanUsername);
+            if (addResult && addResult.error) {
+                socket.emit('session-error', addResult.error);
+                return;
+            }
+            
             sessions.set(sessionId, session);
             
             player.currentSession = sessionId;
@@ -142,7 +147,13 @@ module.exports = function(io) {
                 }
             }
             
-            if (session.addPlayer(socket.id, cleanUsername)) {
+            const addResult = session.addPlayer(socket.id, cleanUsername);
+            if (addResult && addResult.error) {
+                socket.emit('join-error', addResult.error);
+                return;
+            }
+            
+            if (addResult) {
                 player.currentSession = upperSessionId;
                 socket.join(upperSessionId);
                 
