@@ -224,10 +224,12 @@
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   z-index: 1000;
   padding: 1rem;
   overflow-y: auto;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .modal-content {
@@ -235,8 +237,7 @@
   border-radius: 6px;
   width: 100%;
   max-width: 100%;
-  margin: 0.5rem;
-  /* Remove height constraints to fit content */
+  margin: 0;
   max-height: none;
   overflow-y: visible;
 }
@@ -411,6 +412,8 @@
 
   .question-form-modal {
     padding: 1.25rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .modal-content {
@@ -556,6 +559,8 @@
 
   .question-form-modal {
     padding: 1.5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .modal-content {
@@ -699,6 +704,8 @@
 
   .question-form-modal {
     padding: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .modal-content {
