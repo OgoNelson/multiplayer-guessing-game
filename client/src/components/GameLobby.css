@@ -1,37 +1,35 @@
 .game-lobby {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   background: #f5f5f5;
   position: relative;
-  /* Ensure proper layout on mobile */
   width: 100%;
   max-width: 100vw;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
 .lobby-header {
   display: flex;
-  flex-direction: column; /* Stack on mobile */
-  align-items: flex-start; /* Align left on mobile */
-  padding: 1rem; /* Smaller padding for mobile */
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid #e0e0e0;
-  gap: 0.75rem; /* Add gap between elements */
+  gap: 0.75rem;
 }
 
 .session-info h2 {
   margin: 0;
   color: #333;
-  font-size: 1.5rem; /* Smaller font for mobile */
-  /* Prevent text overflow */
+  font-size: 1.5rem;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
 .session-code {
-  font-size: 0.875rem; /* Smaller font for mobile */
+  font-size: 0.875rem;
   color: #666;
   margin-top: 0.25rem;
 }
@@ -41,27 +39,24 @@
   font-weight: bold;
   color: #2196f3;
   background: #e3f2fd;
-  padding: 2px 6px; /* Smaller padding for mobile */
+  padding: 2px 6px;
   border-radius: 4px;
-  font-size: 0.875rem; /* Smaller font for mobile */
+  font-size: 0.875rem;
 }
 
 .leave-button {
   background: #f44336;
   color: white;
   border: none;
-  padding: 0.5rem 1rem; /* Smaller padding for mobile */
+  padding: 0.5rem 1rem;
   border-radius: 6px;
-  font-size: 0.875rem; /* Smaller font for mobile */
+  font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  /* Better touch targets */
   min-height: 44px;
-  /* Prevent text selection */
   user-select: none;
   -webkit-user-select: none;
-  /* Prevent text overflow */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -78,85 +73,79 @@
 
 .leave-button.bottom-right {
   position: fixed;
-  bottom: 1rem; /* Smaller spacing for mobile */
+  bottom: 1rem;
   right: 1rem;
   z-index: 1001;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  padding: 0.5rem 0.75rem; /* Even smaller for floating button */
-  font-size: 0.75rem; /* Even smaller font for floating button */
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
 }
 
 .error-message {
   background: #ffebee;
   color: #c62828;
-  padding: 0.75rem 1rem; /* Smaller padding for mobile */
+  padding: 0.75rem 1rem;
   border-bottom: 1px solid #ffcdd2;
   font-weight: 500;
-  font-size: 0.875rem; /* Smaller font for mobile */
+  font-size: 0.875rem;
 }
 
 .lobby-content {
   display: flex;
-  flex-direction: column; /* Stack on mobile */
+  flex-direction: column;
   flex: 1;
-  padding: 1rem; /* Smaller padding for mobile */
-  gap: 1rem; /* Smaller gap for mobile */
-  overflow: hidden;
+  padding: 1rem;
+  gap: 1rem;
 }
 
 .left-panel {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Smaller gap for mobile */
+  gap: 1rem;
   min-width: 0;
-  overflow: hidden;
-  min-height: 0;
 }
 
 .right-panel {
-  width: 100%; /* Full width on mobile */
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Smaller gap for mobile */
-  min-height: 0;
+  gap: 1rem;
 }
 
 .game-master-controls,
 .player-waiting {
   background: white;
-  border-radius: 6px; /* Smaller radius for mobile */
-  padding: 1rem; /* Smaller padding for mobile */
+  border-radius: 6px;
+  padding: 1rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .game-master-controls h3,
 .player-waiting h3 {
-  margin: 0 0 1rem 0; /* Smaller margin for mobile */
+  margin: 0 0 1rem 0;
   color: #333;
-  font-size: 1.125rem; /* Smaller font for mobile */
+  font-size: 1.125rem;
 }
 
 .question-needed p {
-  margin: 0 0 0.75rem 0; /* Smaller margin for mobile */
+  margin: 0 0 0.75rem 0;
   color: #666;
-  font-size: 0.875rem; /* Smaller font for mobile */
+  font-size: 0.875rem;
 }
 
 .create-question-button {
   background: #4caf50;
   color: white;
   border: none;
-  padding: 0.75rem 1rem; /* Smaller padding for mobile */
+  padding: 0.75rem 1rem;
   border-radius: 6px;
-  font-size: 0.875rem; /* Smaller font for mobile */
+  font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
   width: 100%;
-  /* Better touch targets */
   min-height: 44px;
-  /* Prevent text selection */
   user-select: none;
   -webkit-user-select: none;
 }
@@ -171,42 +160,40 @@
 }
 
 .question-preview {
-  margin-top: 1rem; /* Smaller margin for mobile */
-  padding-top: 1rem; /* Smaller padding for mobile */
+  margin-top: 1rem;
+  padding-top: 1rem;
   border-top: 1px solid #e0e0e0;
 }
 
 .question-preview h4 {
-  margin: 0 0 0.5rem 0; /* Smaller margin for mobile */
+  margin: 0 0 0.5rem 0;
   color: #333;
-  font-size: 1rem; /* Smaller font for mobile */
+  font-size: 1rem;
 }
 
 .question-text {
   background: #f8f9fa;
-  padding: 0.75rem; /* Smaller padding for mobile */
+  padding: 0.75rem;
   border-radius: 6px;
-  border-left: 3px solid #2196f3; /* Smaller border for mobile */
-  margin: 0 0 1rem 0; /* Smaller margin for mobile */
+  border-left: 3px solid #2196f3;
+  margin: 0 0 1rem 0;
   font-style: italic;
   color: #333;
-  font-size: 0.875rem; /* Smaller font for mobile */
+  font-size: 0.875rem;
 }
 
 .start-game-button {
   background: #4caf50;
   color: white;
   border: none;
-  padding: 0.875rem 1rem; /* Smaller padding for mobile */
+  padding: 0.875rem 1rem;
   border-radius: 6px;
-  font-size: 1rem; /* 16px for better touch targets */
+  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
   width: 100%;
-  /* Better touch targets */
   min-height: 44px;
-  /* Prevent text selection */
   user-select: none;
   -webkit-user-select: none;
 }
@@ -224,8 +211,8 @@
   color: #666;
   font-style: italic;
   text-align: center;
-  margin: 0.75rem 0 0 0; /* Smaller margin for mobile */
-  font-size: 0.875rem; /* Smaller font for mobile */
+  margin: 0.75rem 0 0 0;
+  font-size: 0.875rem;
 }
 
 .question-form-modal {
@@ -239,51 +226,50 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  padding: 1rem; /* Smaller padding for mobile */
-  /* Better mobile handling */
+  padding: 1rem;
   overflow-y: auto;
 }
 
 .modal-content {
   background: white;
-  border-radius: 6px; /* Smaller radius for mobile */
+  border-radius: 6px;
   width: 100%;
   max-width: 100%;
-  max-height: calc(100vh - 2rem);
-  overflow-y: auto;
   margin: 0.5rem;
+  /* Remove height constraints to fit content */
+  max-height: none;
+  overflow-y: visible;
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1rem 0 1rem; /* Smaller padding for mobile */
+  padding: 1rem 1rem 0 1rem;
   border-bottom: 1px solid #e0e0e0;
-  margin-bottom: 1rem; /* Smaller margin for mobile */
+  margin-bottom: 1rem;
 }
 
 .modal-header h3 {
   margin: 0;
   color: #333;
-  font-size: 1.125rem; /* Smaller font for mobile */
+  font-size: 1.125rem;
 }
 
 .close-button {
   background: none;
   border: none;
-  font-size: 1.5rem; /* Smaller font for mobile */
+  font-size: 1.5rem;
   cursor: pointer;
   color: #666;
   padding: 0;
-  width: 2rem; /* Smaller size for mobile */
+  width: 2rem;
   height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   transition: background-color 0.2s ease;
-  /* Better touch target */
   min-width: 44px;
   min-height: 44px;
 }
@@ -294,28 +280,28 @@
 
 .game-info {
   background: white;
-  border-radius: 6px; /* Smaller radius for mobile */
-  padding: 1rem; /* Smaller padding for mobile */
+  border-radius: 6px;
+  padding: 1rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .game-info h3 {
-  margin: 0 0 1rem 0; /* Smaller margin for mobile */
+  margin: 0 0 1rem 0;
   color: #333;
-  font-size: 1.125rem; /* Smaller font for mobile */
+  font-size: 1.125rem;
 }
 
 .rules {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem; /* Smaller gap for mobile */
+  gap: 0.75rem;
 }
 
 .rules p {
   margin: 0;
-  padding: 0.5rem 0; /* Smaller padding for mobile */
+  padding: 0.5rem 0;
   border-bottom: 1px solid #f0f0f0;
-  font-size: 0.875rem; /* Smaller font for mobile */
+  font-size: 0.875rem;
   line-height: 1.4;
 }
 
@@ -330,136 +316,136 @@
     padding: 1.25rem;
     gap: 1rem;
   }
-  
+
   .session-info h2 {
     font-size: 1.75rem;
   }
-  
+
   .session-code {
     font-size: 1rem;
   }
-  
+
   .code {
     font-size: 1rem;
     padding: 2px 8px;
   }
-  
+
   .leave-button {
     padding: 0.625rem 1.25rem;
     font-size: 1rem;
   }
-  
+
   .leave-button.bottom-right {
     bottom: 1.25rem;
     right: 1.25rem;
     padding: 0.625rem 1rem;
     font-size: 0.875rem;
   }
-  
+
   .error-message {
     padding: 1rem 1.25rem;
     font-size: 1rem;
   }
-  
+
   .lobby-content {
     padding: 1.25rem;
     gap: 1.25rem;
   }
-  
+
   .left-panel {
     gap: 1.25rem;
   }
-  
+
   .right-panel {
     gap: 1.25rem;
   }
-  
+
   .game-master-controls,
   .player-waiting {
     padding: 1.25rem;
     border-radius: 8px;
   }
-  
+
   .game-master-controls h3,
   .player-waiting h3 {
     font-size: 1.25rem;
     margin-bottom: 1.25rem;
   }
-  
+
   .question-needed p {
     font-size: 1rem;
     margin-bottom: 1rem;
   }
-  
+
   .create-question-button {
     padding: 0.875rem 1.25rem;
     font-size: 1rem;
   }
-  
+
   .question-preview {
     margin-top: 1.25rem;
     padding-top: 1.25rem;
   }
-  
+
   .question-preview h4 {
     font-size: 1.125rem;
     margin-bottom: 0.75rem;
   }
-  
+
   .question-text {
     padding: 1rem;
     border-left-width: 4px;
     margin-bottom: 1.25rem;
     font-size: 1rem;
   }
-  
+
   .start-game-button {
     padding: 1rem 1.25rem;
     font-size: 1.125rem;
   }
-  
+
   .waiting-message {
     margin-top: 1rem;
     font-size: 1rem;
   }
-  
+
   .question-form-modal {
     padding: 1.25rem;
   }
-  
+
   .modal-content {
     border-radius: 8px;
   }
-  
+
   .modal-header {
     padding: 1.25rem 1.25rem 0 1.25rem;
     margin-bottom: 1.25rem;
   }
-  
+
   .modal-header h3 {
     font-size: 1.25rem;
   }
-  
+
   .close-button {
     font-size: 1.75rem;
     width: 2.5rem;
     height: 2.5rem;
   }
-  
+
   .game-info {
     padding: 1.25rem;
     border-radius: 8px;
   }
-  
+
   .game-info h3 {
     font-size: 1.25rem;
     margin-bottom: 1.25rem;
   }
-  
+
   .rules {
     gap: 1rem;
   }
-  
+
   .rules p {
     padding: 0.75rem 0;
     font-size: 1rem;
@@ -469,143 +455,143 @@
 /* Tablets and large phones */
 @media (min-width: 768px) {
   .lobby-header {
-    flex-direction: row; /* Horizontal layout on larger screens */
+    flex-direction: row;
     align-items: center;
     padding: 1rem 1.5rem;
     gap: 1.5rem;
   }
-  
+
   .session-info h2 {
     font-size: 1.875rem;
   }
-  
+
   .session-code {
     font-size: 1.125rem;
   }
-  
+
   .code {
     font-size: 1.125rem;
     padding: 4px 10px;
   }
-  
+
   .leave-button {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
   }
-  
+
   .leave-button.bottom-right {
     bottom: 1.5rem;
     right: 1.5rem;
     padding: 0.75rem 1.25rem;
     font-size: 1rem;
   }
-  
+
   .error-message {
     padding: 1.25rem 1.5rem;
     font-size: 1.125rem;
   }
-  
+
   .lobby-content {
-    flex-direction: row; /* Side by side on larger screens */
+    flex-direction: row;
     padding: 1.5rem;
     gap: 1.5rem;
   }
-  
+
   .left-panel {
     gap: 1.5rem;
   }
-  
+
   .right-panel {
-    width: 350px; /* Fixed width on larger screens */
+    width: 350px;
     gap: 1.5rem;
   }
-  
+
   .game-master-controls,
   .player-waiting {
     padding: 1.5rem;
     border-radius: 10px;
   }
-  
+
   .game-master-controls h3,
   .player-waiting h3 {
     font-size: 1.375rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .question-needed p {
     font-size: 1.125rem;
     margin-bottom: 1.25rem;
   }
-  
+
   .create-question-button {
     padding: 1rem 1.5rem;
     font-size: 1.125rem;
   }
-  
+
   .question-preview {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
   }
-  
+
   .question-preview h4 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
   }
-  
+
   .question-text {
     padding: 1.25rem;
     margin-bottom: 1.5rem;
     font-size: 1.125rem;
   }
-  
+
   .start-game-button {
     padding: 1.25rem 1.5rem;
     font-size: 1.25rem;
   }
-  
+
   .waiting-message {
     margin-top: 1.25rem;
     font-size: 1.125rem;
   }
-  
+
   .question-form-modal {
     padding: 1.5rem;
   }
-  
+
   .modal-content {
     border-radius: 10px;
     max-width: 500px;
   }
-  
+
   .modal-header {
     padding: 1.5rem 1.5rem 0 1.5rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .modal-header h3 {
     font-size: 1.375rem;
   }
-  
+
   .close-button {
     font-size: 2rem;
     width: 3rem;
     height: 3rem;
   }
-  
+
   .game-info {
     padding: 1.5rem;
     border-radius: 10px;
   }
-  
+
   .game-info h3 {
     font-size: 1.375rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .rules {
     gap: 1.25rem;
   }
-  
+
   .rules p {
     padding: 1rem 0;
     font-size: 1.125rem;
@@ -618,137 +604,137 @@
     padding: 1rem 2rem;
     gap: 2rem;
   }
-  
+
   .session-info h2 {
     font-size: 2.25rem;
   }
-  
+
   .session-code {
     font-size: 1.25rem;
   }
-  
+
   .code {
     font-size: 1.25rem;
     padding: 4px 12px;
   }
-  
+
   .leave-button {
     padding: 0.875rem 2rem;
     font-size: 1.125rem;
   }
-  
+
   .leave-button.bottom-right {
     bottom: 2rem;
     right: 2rem;
     padding: 0.875rem 1.5rem;
     font-size: 1.125rem;
   }
-  
+
   .error-message {
     padding: 1.5rem 2rem;
     font-size: 1.25rem;
   }
-  
+
   .lobby-content {
     padding: 2rem;
     gap: 2rem;
   }
-  
+
   .left-panel {
     gap: 2rem;
   }
-  
+
   .right-panel {
-    width: 400px; /* Larger width on desktop */
+    width: 400px;
     gap: 2rem;
   }
-  
+
   .game-master-controls,
   .player-waiting {
     padding: 2rem;
     border-radius: 12px;
   }
-  
+
   .game-master-controls h3,
   .player-waiting h3 {
     font-size: 1.5rem;
     margin-bottom: 2rem;
   }
-  
+
   .question-needed p {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .create-question-button {
     padding: 1.25rem 2rem;
     font-size: 1.25rem;
   }
-  
+
   .question-preview {
     margin-top: 2rem;
     padding-top: 2rem;
   }
-  
+
   .question-preview h4 {
     font-size: 1.375rem;
     margin-bottom: 1.25rem;
   }
-  
+
   .question-text {
     padding: 1.5rem;
     margin-bottom: 2rem;
     font-size: 1.25rem;
   }
-  
+
   .start-game-button {
     padding: 1.5rem 2rem;
     font-size: 1.375rem;
   }
-  
+
   .waiting-message {
     margin-top: 1.5rem;
     font-size: 1.25rem;
   }
-  
+
   .question-form-modal {
     padding: 2rem;
   }
-  
+
   .modal-content {
     border-radius: 12px;
     max-width: 600px;
   }
-  
+
   .modal-header {
     padding: 2rem 2rem 0 2rem;
     margin-bottom: 2rem;
   }
-  
+
   .modal-header h3 {
     font-size: 1.5rem;
   }
-  
+
   .close-button {
     font-size: 2.25rem;
     width: 3.5rem;
     height: 3.5rem;
   }
-  
+
   .game-info {
     padding: 2rem;
     border-radius: 12px;
   }
-  
+
   .game-info h3 {
     font-size: 1.5rem;
     margin-bottom: 2rem;
   }
-  
+
   .rules {
     gap: 1.5rem;
   }
-  
+
   .rules p {
     padding: 1.25rem 0;
     font-size: 1.25rem;
