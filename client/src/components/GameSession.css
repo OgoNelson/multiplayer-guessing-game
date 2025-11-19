@@ -1,30 +1,45 @@
+/* Override any parent container constraints */
+.game-room {
+  min-height: 100vh;
+  height: auto !important;
+  overflow: visible !important;
+}
+
 .game-session {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   background: #f5f5f5;
-  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .game-header {
   display: flex;
-  align-items: center;
-  padding: 16px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid #e0e0e0;
+  gap: 0.75rem;
 }
 
 .game-title {
   display: flex;
-  align-items: center;
-  gap: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
 }
 
 .game-title h2 {
   margin: 0;
   color: #333;
-  font-size: 24px;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .game-status {
@@ -35,27 +50,27 @@
 .status-waiting {
   background: #fff3cd;
   color: #856404;
-  padding: 4px 12px;
+  padding: 2px 8px;
   border-radius: 12px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
 .status-playing {
   background: #d1ecf1;
   color: #0c5460;
-  padding: 4px 12px;
+  padding: 2px 8px;
   border-radius: 12px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
 .status-ended {
   background: #f8d7da;
   color: #721c24;
-  padding: 4px 12px;
+  padding: 2px 8px;
   border-radius: 12px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
@@ -63,12 +78,18 @@
   background: #f44336;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  min-height: 44px;
+  user-select: none;
+  -webkit-user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .leave-button:hover:not(:disabled) {
@@ -82,64 +103,66 @@
 
 .leave-button.bottom-right {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1rem;
+  right: 1rem;
   z-index: 1001;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
 }
 
 .error-message {
   background: #ffebee;
   color: #c62828;
-  padding: 12px 24px;
+  padding: 0.75rem 1rem;
   border-bottom: 1px solid #ffcdd2;
   font-weight: 500;
+  font-size: 0.875rem;
 }
 
 .game-content {
   display: flex;
-  flex: 1;
-  padding: 24px;
-  gap: 24px;
-  overflow: hidden;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  flex: 1 0 auto;
+  overflow: visible !important;
+  height: auto !important;
 }
 
 .left-panel {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1rem;
   min-width: 0;
-  overflow: hidden;
-  min-height: 0;
 }
 
 .right-panel {
-  width: 350px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 0;
 }
 
 .question-section {
   background: white;
-  border-radius: 8px;
-  padding: 20px;
+  border-radius: 6px;
+  padding: 1rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .question-section h3 {
-  margin: 0 0 16px 0;
+  margin: 0 0 1rem 0;
   color: #333;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .question-display {
   background: #f8f9fa;
-  padding: 16px;
+  padding: 1rem;
   border-radius: 6px;
-  border-left: 4px solid #2196f3;
-  font-size: 16px;
+  border-left: 3px solid #2196f3;
+  font-size: 1rem;
   line-height: 1.5;
   color: #333;
   min-height: 60px;
@@ -148,8 +171,8 @@
 }
 
 .timer {
-  margin-top: 16px;
-  font-size: 16px;
+  margin-top: 1rem;
+  font-size: 1rem;
   font-weight: 500;
   color: #666;
   text-align: center;
@@ -163,67 +186,71 @@
 .game-master-view,
 .player-view {
   background: white;
-  border-radius: 8px;
-  padding: 20px;
+  border-radius: 6px;
+  padding: 1rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .game-master-view h3,
 .player-view h3 {
-  margin: 0 0 16px 0;
+  margin: 0 0 1rem 0;
   color: #333;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .answer-display {
   background: #e8f5e8;
-  padding: 12px;
+  padding: 0.75rem;
   border-radius: 6px;
-  border-left: 4px solid #4caf50;
-  margin-bottom: 16px;
-  font-size: 16px;
+  border-left: 3px solid #4caf50;
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .waiting-message {
   color: #666;
   font-style: italic;
   text-align: center;
-  padding: 20px;
+  padding: 1.25rem;
   background: #f8f9fa;
   border-radius: 6px;
+  font-size: 0.875rem;
 }
 
 .winner-announcement,
 .no-winner {
   text-align: center;
-  padding: 20px;
+  padding: 1.25rem;
   background: #f8f9fa;
   border-radius: 6px;
 }
 
 .winner-announcement h4 {
   color: #4caf50;
-  margin: 0 0 16px 0;
-  font-size: 20px;
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
 }
 
 .no-winner h4 {
   color: #ff9800;
-  margin: 0 0 16px 0;
-  font-size: 20px;
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
 }
 
 .next-round-button {
   background: #4caf50;
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 0.875rem 1.5rem;
   border-radius: 6px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  margin-top: 16px;
+  margin-top: 1rem;
+  min-height: 44px;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .next-round-button:hover:not(:disabled) {
@@ -238,21 +265,27 @@
 .guess-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .guess-input-group {
   display: flex;
-  gap: 8px;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .guess-input {
   flex: 1;
-  padding: 12px;
+  padding: 0.875rem;
   border: 2px solid #e0e0e0;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 1rem;
   transition: border-color 0.2s ease;
+  width: 100%;
+  max-width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .guess-input:focus {
@@ -271,12 +304,15 @@
   background: #2196f3;
   color: white;
   border: none;
-  padding: 12px 20px;
+  padding: 0.875rem 1.25rem;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  min-height: 44px;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .submit-guess-button:hover:not(:disabled) {
@@ -290,9 +326,11 @@
 
 .attempts-info {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.875rem;
   color: #666;
 }
 
@@ -306,82 +344,517 @@
 }
 
 .game-result h3 {
-  margin: 0 0 20px 0;
+  margin: 0 0 1.25rem 0;
   color: #333;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .winner-info,
 .no-winner-info {
-  padding: 20px;
+  padding: 1.25rem;
   background: #f8f9fa;
   border-radius: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .winner-info h4 {
   color: #4caf50;
-  margin: 0 0 12px 0;
-  font-size: 20px;
+  margin: 0 0 0.75rem 0;
+  font-size: 1.25rem;
 }
 
 .no-winner-info h4 {
   color: #ff9800;
-  margin: 0 0 12px 0;
-  font-size: 20px;
+  margin: 0 0 0.75rem 0;
+  font-size: 1.25rem;
 }
 
 .winner-info p,
 .no-winner-info p {
   margin: 0;
-  font-size: 16px;
+  font-size: 1rem;
   color: #666;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .game-content {
-    flex-direction: column;
-    padding: 16px;
-    gap: 16px;
-  }
-  
-  .right-panel {
-    width: 100%;
-  }
-  
+/* Responsive design - Mobile First */
+/* Small phones (landscape) */
+@media (min-width: 480px) {
   .game-header {
-    padding: 12px 16px;
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
+    padding: 1.25rem;
+    gap: 1rem;
   }
-  
-  .leave-button.bottom-right {
-    bottom: 10px;
-    right: 10px;
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-  
+
   .game-title {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    gap: 0.75rem;
   }
-  
+
   .game-title h2 {
-    font-size: 20px;
+    font-size: 1.75rem;
   }
-  
+
+  .status-waiting,
+  .status-playing,
+  .status-ended {
+    padding: 3px 10px;
+    font-size: 0.875rem;
+  }
+
+  .leave-button {
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .leave-button.bottom-right {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .error-message {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .game-content {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .left-panel {
+    gap: 1.25rem;
+  }
+
+  .question-section {
+    padding: 1.25rem;
+    border-radius: 8px;
+  }
+
+  .question-section h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .question-display {
+    padding: 1.25rem;
+    border-left-width: 4px;
+    font-size: 1.125rem;
+  }
+
+  .timer {
+    margin-top: 1.25rem;
+    font-size: 1.125rem;
+  }
+
+  .game-master-view,
+  .player-view {
+    padding: 1.25rem;
+    border-radius: 8px;
+  }
+
+  .game-master-view h3,
+  .player-view h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .answer-display {
+    padding: 1rem;
+    border-left-width: 4px;
+    margin-bottom: 1.25rem;
+    font-size: 1.125rem;
+  }
+
+  .waiting-message {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .winner-announcement,
+  .no-winner {
+    padding: 1.5rem;
+  }
+
+  .winner-announcement h4,
+  .no-winner h4 {
+    font-size: 1.375rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .next-round-button {
+    padding: 1rem 1.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .guess-form {
+    gap: 1.25rem;
+  }
+
   .guess-input-group {
-    flex-direction: column;
+    gap: 1rem;
   }
-  
+
+  .guess-input {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .submit-guess-button {
+    padding: 1rem 1.5rem;
+  }
+
   .attempts-info {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    font-size: 1rem;
+    gap: 0.75rem;
+  }
+
+  .game-result h3 {
+    font-size: 1.375rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .winner-info,
+  .no-winner-info {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .winner-info h4,
+  .no-winner-info h4 {
+    font-size: 1.375rem;
+    margin-bottom: 1rem;
+  }
+
+  .winner-info p,
+  .no-winner-info p {
+    font-size: 1.125rem;
+  }
+}
+
+/* Tablets and large phones */
+@media (min-width: 768px) {
+  .game-header {
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .game-title {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .game-title h2 {
+    font-size: 1.875rem;
+  }
+
+  .status-waiting,
+  .status-playing,
+  .status-ended {
+    padding: 4px 12px;
+    font-size: 0.75rem;
+  }
+
+  .leave-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .leave-button.bottom-right {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .error-message {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.125rem;
+  }
+
+  .game-content {
+    flex-direction: row;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .left-panel {
+    gap: 1.5rem;
+  }
+
+  .right-panel {
+    width: 350px;
+  }
+
+  .question-section {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .question-section h3 {
+    font-size: 1.375rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .question-display {
+    padding: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .timer {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .game-master-view,
+  .player-view {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .game-master-view h3,
+  .player-view h3 {
+    font-size: 1.375rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .answer-display {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .waiting-message {
+    padding: 2rem;
+    font-size: 1.125rem;
+  }
+
+  .winner-announcement,
+  .no-winner {
+    padding: 2rem;
+  }
+
+  .winner-announcement h4,
+  .no-winner h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .next-round-button {
+    padding: 1.25rem 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .guess-form {
+    gap: 1.5rem;
+  }
+
+  .guess-input-group {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .guess-input {
+    padding: 1.25rem;
+    font-size: 1rem;
+  }
+
+  .submit-guess-button {
+    padding: 1.25rem 1.75rem;
+  }
+
+  .attempts-info {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    gap: 0;
+  }
+
+  .game-result h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .winner-info,
+  .no-winner-info {
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .winner-info h4,
+  .no-winner-info h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .winner-info p,
+  .no-winner-info p {
+    font-size: 1.25rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .game-header {
+    padding: 1rem 2rem;
+    gap: 2rem;
+  }
+
+  .game-title {
+    gap: 1.25rem;
+  }
+
+  .game-title h2 {
+    font-size: 2.25rem;
+  }
+
+  .status-waiting,
+  .status-playing,
+  .status-ended {
+    padding: 4px 12px;
+    font-size: 0.75rem;
+  }
+
+  .leave-button {
+    padding: 0.875rem 2rem;
+    font-size: 1.125rem;
+  }
+
+  .leave-button.bottom-right {
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.875rem 1.5rem;
+    font-size: 1.125rem;
+  }
+
+  .error-message {
+    padding: 1.5rem 2rem;
+    font-size: 1.25rem;
+  }
+
+  .game-content {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .left-panel {
+    gap: 2rem;
+  }
+
+  .right-panel {
+    width: 400px;
+  }
+
+  .question-section {
+    padding: 2rem;
+    border-radius: 12px;
+  }
+
+  .question-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .question-display {
+    padding: 2rem;
+    font-size: 1.375rem;
+  }
+
+  .timer {
+    margin-top: 2rem;
+    font-size: 1.375rem;
+  }
+
+  .game-master-view,
+  .player-view {
+    padding: 2rem;
+    border-radius: 12px;
+  }
+
+  .game-master-view h3,
+  .player-view h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .answer-display {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.375rem;
+  }
+
+  .waiting-message {
+    padding: 2.5rem;
+    font-size: 1.25rem;
+  }
+
+  .winner-announcement,
+  .no-winner {
+    padding: 2.5rem;
+  }
+
+  .winner-announcement h4,
+  .no-winner h4 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .next-round-button {
+    padding: 1.5rem 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .guess-form {
+    gap: 2rem;
+  }
+
+  .guess-input-group {
+    gap: 1rem;
+  }
+
+  .guess-input {
+    padding: 1.5rem;
+    font-size: 1.125rem;
+  }
+
+  .submit-guess-button {
+    padding: 1.5rem 2rem;
+  }
+
+  .attempts-info {
+    font-size: 1.125rem;
+  }
+
+  .game-result h3 {
+    font-size: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .winner-info,
+  .no-winner-info {
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .winner-info h4,
+  .no-winner-info h4 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .winner-info p,
+  .no-winner-info p {
+    font-size: 1.375rem;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1280px) {
+  .right-panel {
+    width: 450px;
   }
 }
 
